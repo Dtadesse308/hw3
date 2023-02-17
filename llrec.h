@@ -80,6 +80,20 @@ Node* llfilter(Node* head, Comp pred);
 template <typename Comp>
 Node* llfilter(Node* head, Comp pred)
 {
+        //base case
+  if ( head == nullptr)
+  {
+    return;
+  }
+
+
+ if (pred(head)){         //check if curr must be removed
+    Node* temp = head;
+      head = head->next;
+      delete temp;
+  }
+ 
+   split(head->next, pred);
     //*********************************************
     // Provide your implementation below
     //*********************************************
