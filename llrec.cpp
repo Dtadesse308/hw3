@@ -4,48 +4,43 @@
 // Provide your implementation of llpivot below
 //*********************************************
 
-void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot){
-    //base case
+void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot)
+{
+  // base case
   if (head == nullptr)
   {
+    smaller = nullptr;
+    larger = nullptr;
     return;
   }
 
-  split(head->next, smaller, larger,pivot);
+  llpivot(head->next, smaller, larger, pivot);
 
-  //if val is less or equal to pivot
-  if ((head->value) <= pivot)
+  // if val is less or equal to pivot
+  if ((head->val) <= pivot)
   {
-    //if new, create new LL
-    if (smaller == nullptr)
-    { 
-      Node *newp = new Node((head->value), nullptr);
-      smaller = newp;
-    }
-    //if existing, add to LL
-    else
-    {
-      Node *newp = new Node((head->value), smaller);
-      smaller = newp;
+    // if new, create new LL
+    if (smaller == NULL){
+      smaller = head;
+    }   
+    else if (smaller != NULL){
+      head->next = smaller;
+      smaller = head;
     }
   }
 
-  //if val is greater than pivot
-  else if ((head->value) > pivot)
+  // if val is greater than pivot
+  else if ((head->val) > pivot)
   {
-     //if new, create new LL
-    if (larger == nullptr)
-    {
-      Node *newp = new Node((head->value), nullptr);
-      larger = newp;
+    
+    if (larger == NULL){
+      larger = head;
     }
-    else
-    {
-      //if existing, add to LL
-      Node *newp = new Node((head->value), larger);
-      larger = newp;
+    else if (larger != NULL){
+      head->next = larger;
+      larger = head;
     }
   }
-  delete head;
-  head = nullptr;
+
+  head = NULL;
 }

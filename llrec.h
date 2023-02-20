@@ -83,22 +83,26 @@ Node* llfilter(Node* head, Comp pred)
         //base case
   if ( head == nullptr)
   {
-    return;
+    return head;
   }
 
+   if (pred(head->val)){         //check if curr must be remove   
+    Node* temp = llfilter(head->next,pred);
+    delete head;
+    return temp;
+   }
 
- if (pred(head)){         //check if curr must be removed
-    Node* temp = head;
-      head = head->next;
-      delete temp;
+  head->next = llfilter(head->next, pred);
+
+    return head;
   }
+  
  
-   split(head->next, pred);
+   
     //*********************************************
     // Provide your implementation below
     //*********************************************
 
 
-}
 
 #endif
