@@ -103,14 +103,16 @@ private:
  */
 template <typename T, typename Comparator>
 void Heap<T,Comparator>::push(const T &item){
+
   //add to next open spot
     heap.push_back(item);
     int loc = heap.size()-1;
-    int parent = (loc/m);    
+    int parent = ((loc-1)/m);    
+
     while ((parent>=0) && (comp(heap[loc],heap[parent]))){
       std::swap(heap[parent],heap[loc]);
       loc=parent;
-      parent = parent/2;
+      parent = (parent-1)/m;
     }
 
 }
@@ -155,7 +157,7 @@ T const &Heap<T, PComparator>::top() const
     // ================================
     // throw the appropriate exception
     // ================================
-    throw std::exception(); // fix exception
+    throw std::underflow_error("empty heap"); // fix exception
   }
   // If we get here we know the heap has at least 1 item
   // Add code to return the top element
@@ -179,7 +181,7 @@ void Heap<T, PComparator>::pop()
     // ================================
     // throw the appropriate exception
     // ================================
-    throw std::exception(); // fix exception
+    throw std::underflow_error("empty heap"); // fix exception
   }
 
   // swap top with bottom
@@ -191,10 +193,35 @@ void Heap<T, PComparator>::pop()
   while ((int)heap.size() > (m * curr + 1))
   { // while not at the end node
 
+  int lastChild = 0;
+
+  for (int i = 1; i <= m; i ++){
+      if ( (m*curr+i) < heap.size()){
+        lastChild = i;
+      }
+      else 
+      break;
+  }
+  
+  int priorityChild = m*curr+1;
+
+  for (int i = 1; i <= lastChild; i++){
+    if ((comp (heap[m*curr+i],heap[priorityChild]))){
+      priorityChild = (m*curr+i);
+    }
+  }
+
+  if ( comp(heap[priorityChild],heap[curr])){
+    std::swap(heap[curr], heap[priorityChild]);
+    curr = priorityChild;
+  }
+  else {
+    break;
+  }
+
+/*
     if ((m * curr + 2) < heap.size())
     { // check if we have right node
-
-
       if (( comp (heap[m * curr + 1],heap[curr])) || ( comp(heap[m * curr + 2],heap[curr])))
       { // check if child node has priority over parent
 
@@ -215,7 +242,7 @@ void Heap<T, PComparator>::pop()
       }
     }
 
-    else if (((m * curr + 1) < (int)heap.size()) && ((m * curr + 2) >= (int)heap.size()))
+    else if (((m * curr + 1) <= (int)heap.size()) )
     { // check if we only have a left child
       if (comp(heap[m * curr + 1], heap[curr]))
       { // if left child has priority than parent swap
@@ -227,7 +254,10 @@ void Heap<T, PComparator>::pop()
         break;
       }
     }
+    */
+
   }
+  
 }
 
 #endif

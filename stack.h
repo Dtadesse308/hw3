@@ -51,7 +51,7 @@ public:
     template <typename T >
     void Stack<T>::pop(){  // throws std::underflow_error if empty
     if (index == 0){
-        throw std::underflow_error();       //not working
+        throw std::underflow_error("empty stack");       //not working
     }
     stack.pop_back();
     index--;
@@ -60,7 +60,7 @@ public:
     template <typename T >
     const T& Stack<T>::top() const{// throws std::underflow_error if empty
     if (index == 0){
-        throw std::underflow_error(); // not working
+        throw std::underflow_error("empty stack"); // not working
     }
     else 
     return stack[index-1];
