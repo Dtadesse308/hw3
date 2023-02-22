@@ -1,0 +1,85 @@
+Start testing: Feb 21 11:04 PST
+----------------------------------------------------------
+1/2 Testing: Stack.BasicString
+1/2 Test: Stack.BasicString
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "--error-exitcode=113" "/work/hw3/hw3/hw3_tests/stack_tests/stack_tests" "--gtest_filter=Stack.BasicString"
+Directory: /work/hw3/hw3/hw3_tests/stack_tests
+"Stack.BasicString" start time: Feb 21 11:04 PST
+Output:
+----------------------------------------------------------
+==150== Memcheck, a memory error detector
+==150== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==150== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==150== Command: /work/hw3/hw3/hw3_tests/stack_tests/stack_tests --gtest_filter=Stack.BasicString
+==150== 
+Running main() from /build/googletest-K1TalW/googletest-1.10.0/googletest/src/gtest_main.cc
+Note: Google Test filter = Stack.BasicString
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Stack
+[ RUN      ] Stack.BasicString
+[       OK ] Stack.BasicString (18 ms)
+[----------] 1 test from Stack (19 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (26 ms total)
+[  PASSED  ] 1 test.
+==150== 
+==150== HEAP SUMMARY:
+==150==     in use at exit: 0 bytes in 0 blocks
+==150==   total heap usage: 200 allocs, 200 frees, 116,078 bytes allocated
+==150== 
+==150== All heap blocks were freed -- no leaks are possible
+==150== 
+==150== For lists of detected and suppressed errors, rerun with: -s
+==150== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   0.49 sec
+----------------------------------------------------------
+Test Passed.
+"Stack.BasicString" end time: Feb 21 11:04 PST
+"Stack.BasicString" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: Stack.RandomInt
+2/2 Test: Stack.RandomInt
+Command: "/usr/bin/valgrind" "--tool=memcheck" "--leak-check=yes" "--trace-children=no" "--error-exitcode=113" "/work/hw3/hw3/hw3_tests/stack_tests/stack_tests" "--gtest_filter=Stack.RandomInt"
+Directory: /work/hw3/hw3/hw3_tests/stack_tests
+"Stack.RandomInt" start time: Feb 21 11:04 PST
+Output:
+----------------------------------------------------------
+==151== Memcheck, a memory error detector
+==151== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==151== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==151== Command: /work/hw3/hw3/hw3_tests/stack_tests/stack_tests --gtest_filter=Stack.RandomInt
+==151== 
+Running main() from /build/googletest-K1TalW/googletest-1.10.0/googletest/src/gtest_main.cc
+Note: Google Test filter = Stack.RandomInt
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Stack
+[ RUN      ] Stack.RandomInt
+[       OK ] Stack.RandomInt (797 ms)
+[----------] 1 test from Stack (799 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (807 ms total)
+[  PASSED  ] 1 test.
+==151== 
+==151== HEAP SUMMARY:
+==151==     in use at exit: 0 bytes in 0 blocks
+==151==   total heap usage: 21,234 allocs, 21,234 frees, 1,076,940 bytes allocated
+==151== 
+==151== All heap blocks were freed -- no leaks are possible
+==151== 
+==151== For lists of detected and suppressed errors, rerun with: -s
+==151== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+<end of output>
+Test time =   1.21 sec
+----------------------------------------------------------
+Test Passed.
+"Stack.RandomInt" end time: Feb 21 11:05 PST
+"Stack.RandomInt" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Feb 21 11:05 PST

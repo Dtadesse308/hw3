@@ -1,0 +1,24 @@
+Pivot.Empty 22 0.0350477
+Pivot.Size1SmallEmpty 18 0.0253268
+Pivot.Size1LargeEmpty 18 0.0235541
+Pivot.Size2SmallLarge 18 0.0235808
+Pivot.Size2LargeSmall 18 0.0221062
+Pivot.Size3LargeSmallLarge 18 0.0217036
+Pivot.Size3SmallLargeSmall 18 0.0226851
+Pivot.Size3LargeLargeSmall 18 0.0217738
+Pivot.Size6SmallThenLarge 18 0.022304
+Pivot.Size6LargeThenSmall 18 0.021873
+Pivot.Nominal 18 0.0226009
+Pivot.SameValues 18 0.0222961
+Pivot.NoCopySameNodeCheck 1 0.397392
+Filter.EmptyList 20 0.0193709
+Filter.Size1_F 7 0.0550597
+Filter.Size1_nF 10 0.0394899
+Filter.Size2_F_nF 7 0.0560484
+Filter.Size2_nF_F 7 0.0551367
+Filter.Size3_nF_F_nF 7 0.055188
+Filter.Size3_F_nF_F 6 0.0657076
+Filter.SameNodeCheck 7 0.0586485
+Filter.MultipleCalls 6 0.0656398
+Filter.CompareWithLlrec 2 0.209184
+---

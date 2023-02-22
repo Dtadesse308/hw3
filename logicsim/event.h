@@ -11,6 +11,7 @@ struct Event
 
 typedef struct EventLess {
         //write the operator() required to make this a functor that compares Events by time
+        
 } EventLess;
 	
 #endif
