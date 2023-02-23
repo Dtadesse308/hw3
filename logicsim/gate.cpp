@@ -91,10 +91,10 @@ Event* Or2Gate::update(uint64_t current_time)
 }
 
 
-Not2Gate::Not2Gate(Wire* a, Wire* b, Wire* o) : Gate(2,o)
+Not2Gate::Not2Gate(Wire* a, Wire* o) : Gate(1,o)
 {
     wireInput(0,a);
-    wireInput(1,b);
+   // wireInput(1,b);
 }
 
 Event* Not2Gate::update(uint64_t current_time)
@@ -110,10 +110,9 @@ Event* Not2Gate::update(uint64_t current_time)
 			state = '0';
 			break;
 		}
-		else if(in == '1')
+		else if(in == '0')
 		{
-			state = '0';
-			break;
+			state = '1';
 		}
 		else if(in == 'X')
 		{
